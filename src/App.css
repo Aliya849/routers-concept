@@ -1,0 +1,311 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: sticky;
+}
+.img {
+  background-image: url("components/img2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  width: 1360px;
+  box-sizing: border-box;
+  
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #d91656; 
+  position: sticky;
+  z-index: 1000;
+  top:0;
+  width: 95%; /* Ensures the navbar occupies the entire width */
+  height: 50px; /* Sets a uniform height */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  margin: 0; /* Removes any potential default margins */
+  /* Viewport width, forces the full screen width */
+  left: 0;
+}
+
+/* Centering the content inside the navbar */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Adjust max width as needed */
+  margin: 0 auto; /* Centers the navbar content horizontally */
+}
+
+/* Logo styling */
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar .logo a {
+  color: #ecf0f1; /* Light color for the logo */
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+/* Navigation links container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Styling each navigation link */
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: #ecf0f1; /* Light color for nav links */
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  font-weight: bold;
+
+  font-family: "Poppins", sans-serif;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect - color change and underline */
+.nav-links li a:hover {
+  color: #2c3e50;
+  background-color: #fcfaee; /* A bright yellow-orange hover effect */
+  border-radius: 5px;
+}
+
+/* Smooth underline effect on hover */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: #f39c12;
+  transition: width 0.3s ease;
+}
+
+/* On hover, the underline expands */
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbar .logo {
+    margin-bottom: 1rem;
+  }
+}
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  color: white;
+  
+}
+.heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Adds shadow to make text stand out */
+  font-family: 'Poppins', sans-serif;
+}
+.span {
+  color: #d91656; /* Different color for FOODIEHUB */
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+}
+/* Container styling */
+.menu-container {
+  padding: 2rem;
+  background-color: #121212; /* Dark background */
+  text-align: center;
+  height: 100vh;
+}
+
+.menu-heading {
+  font-size: 2.5rem;
+  color: #d91656; /* Magenta color */
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Grid layout for the menu items */
+.menu-grid {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* Menu item styling */
+.menu-item {
+  background-color: #222; /* Dark card background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.menu-item-name {
+  font-size: 1.8rem;
+  color: #fff; /* White text */
+  margin: 0.5rem 0;
+}
+.p{
+  color: white;
+  position: absolute;
+  left: 0;
+}
+.menu-item-description {
+  font-size: 1rem;
+  color: #aaa; /* Light gray text */
+}
+
+.menu-item-price {
+  font-size: 1.5rem;
+  color: #d91656; /* Magenta price color */
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .menu-item-name {
+    font-size: 1.5rem;
+  }
+
+  .menu-item-price {
+    font-size: 1.2rem;
+  }
+
+  .menu-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-item-name {
+    font-size: 1.2rem;
+  }
+
+  .menu-item-description {
+    font-size: 0.9rem;
+  }
+
+  .menu-heading {
+    font-size: 1.8rem;
+  }
+}
+.about-story,
+.about-ingredients,
+.about-experience {
+  padding: 80px 20px; /* Add padding to avoid overlap with navbar */
+  margin: 20px auto;
+  max-width: 3000px;
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Styling */
+h2 {
+  font-size: 2rem;
+  color: #e91e63; /* Pink theme like in the header */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* Media Queries for responsiveness */
+
+/* Larger screens */
+@media (min-width: 1200px) {
+  h2 {
+      font-size: 2.5rem;
+  }
+  p {
+      font-size: 1.3rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  h2 {
+      font-size: 1.8rem;
+  }
+  p {
+      font-size: 1.1rem;
+  }
+  
+  .about-story, .about-ingredients, .about-experience {
+      padding: 15px;
+      margin: 10px 15px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  h2 {
+      font-size: 1.5rem;
+  }
+  p {
+      font-size: 1rem;
+  }
+
+  .about-story, .about-ingredients, .about-experience {
+      padding: 10px;
+      margin: 5px 10px;
+  }
+}
